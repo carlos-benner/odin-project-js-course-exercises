@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css" />
+        <script src="index.js" defer></script>
+    </head>
+    <body>
+        <div class="container">
+            <ul class="book-list">
+                <template id="book-template">
+                    <li class="book">
+                        <div class="book-title">No title</div>
+                        <div class="book-author">Unknown</div>
+                        <div class="book-pages">No pages info</div>
+                        <div class="book-read-label" onclick="toggleRead(this)">
+                            Not read yet
+                        </div>
+                    </li>
+                </template>
+                <div class="book add-book">
+                    <button class="" onclick="toggleNewBookForm(true)">
+                        <h1>Add Book</h1>
+                    </button>
+                    <div class="add-book-form hidden">
+                        <h1>Add Book</h1>
+                        <form>
+                            <div class="form-input">
+                                <label for="add-book-title">Title</label>
+                                <input id="add-book-title" required />
+                            </div>
+                            <div class="form-input">
+                                <label for="add-book-author">Author</label>
+                                <input id="add-book-author" required />
+                            </div>
+                            <div class="form-input">
+                                <label for="add-book-pages">Pages</label>
+                                <input id="add-book-pages" required />
+                            </div>
+
+                            <div class="form-input">
+                                <label for="add-book-read">Read</label>
+                                <div>
+                                    <input id="add-book-read" type="checkbox" />
+                                </div>
+                            </div>
+                            <ul class="error-messages"></ul>
+                        </form>
+                        <div class="button-container">
+                            <button onclick="toggleNewBookForm(false)">
+                                Close
+                            </button>
+                            <button onclick="saveNewBook()">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </ul>
+        </div>
+    </body>
+</html>
